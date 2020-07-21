@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="kor">
+  <head>
+  <meta charset="utf-8">
+<title>윈도우 C&#43;&#43; 문자열 인코딩 - tymmkang&#39;s blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.74.2" /><meta itemprop="name" content="윈도우 C&#43;&#43; 문자열 인코딩">
+<meta itemprop="description" content="윈도우 환경에서 C&#43;&#43;만을 사용하여 RESTful API를 사용해야하는 경우 인코딩이 문제가 될 수 있다. 이를 해결하기위한 함수를 포스팅한다.">
+<meta itemprop="datePublished" content="2020-07-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="336">
+
+
+
+<meta itemprop="keywords" content="C&#43;&#43;,Windows,winapi,utf8,multibyte,url," /><meta property="og:title" content="윈도우 C&#43;&#43; 문자열 인코딩" />
+<meta property="og:description" content="윈도우 환경에서 C&#43;&#43;만을 사용하여 RESTful API를 사용해야하는 경우 인코딩이 문제가 될 수 있다. 이를 해결하기위한 함수를 포스팅한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tymmkang.github.io/blog/post_2020_07_21_00_%EC%9C%88%EB%8F%84%EC%9A%B0_c&#43;&#43;_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9D%B8%EC%BD%94%EB%94%A9/" />
+<meta property="article:published_time" content="2020-07-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="윈도우 C&#43;&#43; 문자열 인코딩"/>
+<meta name="twitter:description" content="윈도우 환경에서 C&#43;&#43;만을 사용하여 RESTful API를 사용해야하는 경우 인코딩이 문제가 될 수 있다. 이를 해결하기위한 함수를 포스팅한다."/>
+<link rel="stylesheet" href="/css/bundle.min.ecc32bdf83670f946cc87f86fb6463e3b4ead0039b2c673d9a8be008867f064a.css" integrity="sha256-7MMr34NnD5RsyH&#43;G&#43;2Rj47Tq0AObLGc9movgCIZ/Bko="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  
+  <header>
+    <h1>tymmkang</h1>
+  </header>
+  <main>
+    <p>dev, hobby, life</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/tymmkang" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:tymmkang.gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/post_2020_07_21_00_%EC%9C%88%EB%8F%84%EC%9A%B0_c&#43;&#43;_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9D%B8%EC%BD%94%EB%94%A9/">윈도우 C&#43;&#43; 문자열 인코딩</a></h2>
+    
+    
+      <p>윈도우 환경에서 C&#43;&#43;만을 사용하여 RESTful API를 사용해야하는 경우 인코딩이 문제가 될 수 있다. 이를 해결하기위한 함수를 포스팅한다.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-07-21 00:00:00 &#43;0000 UTC">2020-07-21</time>
+    
+    <p>2-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%ec%9c%88%eb%8f%84%ec%9a%b0%20C%2b%2b%20%eb%ac%b8%ec%9e%90%ec%97%b4%20%ec%9d%b8%ec%bd%94%eb%94%a9&amp;url=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_07_21_00_%25EC%259C%2588%25EB%258F%2584%25EC%259A%25B0_c%2b%2b_%25EB%25AC%25B8%25EC%259E%2590%25EC%2597%25B4_%25EC%259D%25B8%25EC%25BD%2594%25EB%2594%25A9%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_07_21_00_%25EC%259C%2588%25EB%258F%2584%25EC%259A%25B0_c%2b%2b_%25EB%25AC%25B8%25EC%259E%2590%25EC%2597%25B4_%25EC%259D%25B8%25EC%25BD%2594%25EB%2594%25A9%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_07_21_00_%25EC%259C%2588%25EB%258F%2584%25EC%259A%25B0_c%2b%2b_%25EB%25AC%25B8%25EC%259E%2590%25EC%2597%25B4_%25EC%259D%25B8%25EC%25BD%2594%25EB%2594%25A9%2f&amp;title=%ec%9c%88%eb%8f%84%ec%9a%b0%20C%2b%2b%20%eb%ac%b8%ec%9e%90%ec%97%b4%20%ec%9d%b8%ec%bd%94%eb%94%a9" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_07_21_00_%25EC%259C%2588%25EB%258F%2584%25EC%259A%25B0_c%2b%2b_%25EB%25AC%25B8%25EC%259E%2590%25EC%2597%25B4_%25EC%259D%25B8%25EC%25BD%2594%25EB%2594%25A9%2f&amp;title=%ec%9c%88%eb%8f%84%ec%9a%b0%20C%2b%2b%20%eb%ac%b8%ec%9e%90%ec%97%b4%20%ec%9d%b8%ec%bd%94%eb%94%a9" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_07_21_00_%25EC%259C%2588%25EB%258F%2584%25EC%259A%25B0_c%2b%2b_%25EB%25AC%25B8%25EC%259E%2590%25EC%2597%25B4_%25EC%259D%25B8%25EC%25BD%2594%25EB%2594%25A9%2f&amp;description=%ec%9c%88%eb%8f%84%ec%9a%b0%20C%2b%2b%20%eb%ac%b8%ec%9e%90%ec%97%b4%20%ec%9d%b8%ec%bd%94%eb%94%a9" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_07_21_00_%25EC%259C%2588%25EB%258F%2584%25EC%259A%25B0_c%2b%2b_%25EB%25AC%25B8%25EC%259E%2590%25EC%2597%25B4_%25EC%259D%25B8%25EC%25BD%2594%25EB%2594%25A9%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <p> </p>
+<h2 id="c-문자열-인코딩">C++ 문자열 인코딩</h2>
+<p>며칠 전 C++에서 HTTPS 리퀘스트를 송신해야 했었다.</p>
+<p>본인은 MSVC 멀티바이트 환경에서 구현했기 때문에. 필요했던 함수는 Multibyte, UTF-8 간 변환과, UTF-8 문자열을 URL 포맷에 맞도록 인코딩해주는 함수였다.</p>
+<ul>
+<li>Multibyte -&gt; UTF-8</li>
+<li>UTF-8 -&gt; Multibyte</li>
+<li>UTF-8 -&gt; URL format</li>
+</ul>
+<p>구현된 함수에서 파라미터로 전달 된 std::string은 사실상 바이트 버퍼로 취급된다. 즉 std::string이라고 내부 버퍼에 1byte로 표현되는 문자들만 있는 것이 아니다. 이렇게 구현한 이유는 표준입출력을 통해 바로 콘솔에 출력하고 싶어서이다.</p>
+<h3 id="multibyte---utf-8">Multibyte -&gt; UTF-8</h3>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="c1">// ...
+</span><span class="c1"></span><span class="kt">bool</span> <span class="nf">MB2U8</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">mbStr</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">*</span> <span class="n">pRefU8Str</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">size_t</span> <span class="n">mbLen</span> <span class="o">=</span> <span class="o">::</span><span class="n">MultiByteToWideChar</span><span class="p">(</span><span class="n">CP_ACP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">mbStr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">mbStr</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">mblen</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">wstring</span> <span class="n">ws</span><span class="p">(</span><span class="n">mbLen</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+	<span class="n">mbLen</span> <span class="o">=</span> <span class="o">::</span><span class="n">MultiByteToWideChar</span><span class="p">(</span><span class="n">CP_ACP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">mbStr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">mbStr</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">wchar_t</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ws</span><span class="p">.</span><span class="n">data</span><span class="p">()),</span> <span class="n">mbLen</span><span class="p">);</span>
+
+	<span class="n">size_t</span> <span class="n">u8Len</span> <span class="o">=</span> <span class="o">::</span><span class="n">WideCharToMultiByte</span><span class="p">(</span><span class="n">CP_UTF8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ws</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">ws</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">u8Len</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+	<span class="n">pRefU8Str</span><span class="o">-&gt;</span><span class="n">resize</span><span class="p">(</span><span class="n">u8Len</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+	<span class="n">u8Len</span> <span class="o">=</span> <span class="o">::</span><span class="n">WideCharToMultiByte</span><span class="p">(</span><span class="n">CP_UTF8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ws</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">ws</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pRefU8Str</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">()),</span> <span class="n">u8Len</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="utf-8---multibyte">UTF-8 -&gt; Multibyte</h3>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="c1">// ...
+</span><span class="c1"></span><span class="kt">bool</span> <span class="nf">U82MB</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">u8Str</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">*</span> <span class="n">pRefMbStr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">size_t</span> <span class="n">u8Len</span> <span class="o">=</span> <span class="o">::</span><span class="n">MultiByteToWideChar</span><span class="p">(</span><span class="n">CP_UTF8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">u8Str</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">u8Str</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">u8Len</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">wstring</span> <span class="n">ws</span><span class="p">(</span><span class="n">u8Len</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+	<span class="n">u8Len</span> <span class="o">=</span> <span class="o">::</span><span class="n">MultiByteToWideChar</span><span class="p">(</span><span class="n">CP_UTF8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">u8Str</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">u8Str</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">wchar_t</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ws</span><span class="p">.</span><span class="n">data</span><span class="p">()),</span> <span class="n">u8Len</span><span class="p">);</span>
+
+	<span class="n">size_t</span> <span class="n">mbLen</span> <span class="o">=</span> <span class="o">::</span><span class="n">WideCharToMultiByte</span><span class="p">(</span><span class="n">CP_ACP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ws</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">u8Len</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">mbLen</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+	<span class="n">pRefMbStr</span><span class="o">-&gt;</span><span class="n">resize</span><span class="p">(</span><span class="n">mbLen</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+	<span class="n">mbLen</span> <span class="o">=</span> <span class="o">::</span><span class="n">WideCharToMultiByte</span><span class="p">(</span><span class="n">CP_ACP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ws</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">u8Len</span><span class="p">,</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pRefMbStr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">()),</span> <span class="n">mbLen</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="utf-8---url-format">UTF-8 -&gt; URL format</h3>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="c1">// ...
+</span><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">EncodeForURL</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
+	<span class="kt">char</span> <span class="n">hexTemp</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+	<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">c</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+		<span class="k">if</span> <span class="p">((</span><span class="n">c</span> <span class="o">&gt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">&#39;9&#39;</span><span class="p">))</span> <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span>
+		<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39; &#39;</span><span class="p">)</span> <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;+&#39;</span><span class="p">;</span>
+		<span class="k">else</span> <span class="nf">if</span> <span class="p">((</span><span class="n">c</span> <span class="o">&gt;=</span> <span class="sc">&#39;A&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">&#39;Z&#39;</span><span class="p">))</span> <span class="n">ss</span> <span class="o">&lt;&lt;</span>  <span class="n">c</span><span class="p">;</span>
+		<span class="k">else</span> <span class="nf">if</span> <span class="p">((</span><span class="n">c</span> <span class="o">&gt;=</span> <span class="sc">&#39;a&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="p">))</span> <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span>
+		<span class="k">else</span> <span class="nf">if</span> <span class="p">((</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;@&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;.&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;/&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;\\&#39;</span><span class="p">)</span>
+			<span class="o">||</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;_&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;:&#39;</span><span class="p">))</span>	<span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span>
+		<span class="k">else</span> <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;%&#39;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">hex</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">c</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+    </div>
+    <footer>
+      <div class="stats">
+  <ul class="categories">
+    
+      
+        
+          <li><a class="article-terms-link" href="/categories/development/">development</a></li>
+        
+      
+    
+  </ul>
+  <ul class="tags">
+    
+      
+        
+          <li><a class="article-terms-link" href="/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/windows/">Windows</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/winapi/">winapi</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/utf8/">utf8</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/multibyte/">multibyte</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/url/">url</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/post_2020_07_20_00_test/" class="button right"><span>테스트 포스팅</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/post_2020_07_21_00_%EC%9C%88%EB%8F%84%EC%9A%B0_c&#43;&#43;_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9D%B8%EC%BD%94%EB%94%A9/">윈도우 C&#43;&#43; 문자열 인코딩</a></h2>
+          <time class="published" datetime="2020-07-21 00:00:00 &#43;0000 UTC">2020-07-21</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/post_2020_07_20_00_test/" class="image" style="--bg-image: url('https://tymmkang.github.io/blog/post_2020_07_20_00_test/pic.jpg');">
+    <img class="stretchH" src="https://tymmkang.github.io/blog/post_2020_07_20_00_test/pic.jpg" alt="Valley">
+  </a>
+        <header>
+          <h2><a href="/blog/post_2020_07_20_00_test/">테스트 포스팅</a></h2>
+          <time class="published" datetime="2020-07-20 00:00:00 &#43;0000 UTC">2020-07-20</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/development/">development<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+  <p class="copyright">
+    © 2020 tymmkang&#39;s blog
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.74.2' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.038916c3490dd317b7221944f0cb62b9d1b2429a313b8e0982fb8406273ae701.js" integrity="sha256-A4kWw0kN0xe3IhlE8MtiudGyQpoxO44JgvuEBic65wE="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>
