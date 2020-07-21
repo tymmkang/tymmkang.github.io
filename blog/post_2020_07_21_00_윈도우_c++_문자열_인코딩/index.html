@@ -10,7 +10,7 @@
 <meta itemprop="description" content="윈도우 환경에서 C&#43;&#43;만을 사용하여 RESTful API를 사용해야하는 경우 인코딩이 문제가 될 수 있다. 이를 해결하기위한 함수를 포스팅한다.">
 <meta itemprop="datePublished" content="2020-07-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="336">
+<meta itemprop="wordCount" content="344">
 
 
 
@@ -204,11 +204,11 @@
 <p>며칠 전 C++에서 HTTPS 리퀘스트를 송신해야 했었다.</p>
 <p>본인은 MSVC 멀티바이트 환경에서 구현했기 때문에. 필요했던 함수는 Multibyte, UTF-8 간 변환과, UTF-8 문자열을 URL 포맷에 맞도록 인코딩해주는 함수였다.</p>
 <ul>
-<li>Multibyte -&gt; UTF-8</li>
-<li>UTF-8 -&gt; Multibyte</li>
-<li>UTF-8 -&gt; URL format</li>
+<li>MB2U8 (Multibyte -&gt; UTF-8)</li>
+<li>U82MB (UTF-8 -&gt; Multibyte)</li>
+<li>EncodeForURL (UTF-8 -&gt; URL format)</li>
 </ul>
-<p>구현된 함수에서 파라미터로 전달 된 std::string은 사실상 바이트 버퍼로 취급된다. 즉 std::string이라고 내부 버퍼에 1byte로 표현되는 문자들만 있는 것이 아니다. 이렇게 구현한 이유는 표준입출력을 통해 바로 콘솔에 출력하고 싶어서이다.</p>
+<p>구현한 함수 중 MB2U8과, U82MB 함수에서 첫 번째 파라미터로 전달된 std::string은 사실상 바이트 버퍼로 취급된다. 즉 std::string이라고 내부 버퍼에 1byte로 표현되는 문자들만 있는 것이 아니다. 이렇게 구현한 이유는 표준입출력을 통해 바로 콘솔에 출력하고 싶어서이다.</p>
 <h3 id="multibyte---utf-8">Multibyte -&gt; UTF-8</h3>
 <div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
