@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>기술면접 on tymmkang&#39;s blog</title>
+    <link>https://tymmkang.github.io/tags/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91/</link>
+    <description>Recent content in 기술면접 on tymmkang&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>kor</language>
+    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tymmkang.github.io/tags/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>게임회사 기술 면접 복기</title>
+      <link>https://tymmkang.github.io/blog/post_2020_07_28_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/blog/post_2020_07_28_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0/</guid>
+      <description>지원한 회사는 도트 스타일의 2D 벨트스크롤 액션 RPG 게임을 서비스하고 있다. 면접은 6대 1 면접이었다. 단 한명은 질문은 안하고 랩탑으로 타이핑만 계속 했던것으로 보아 서기에 가까웠다.
+대답하지 못한 내용 1. AABB, OBB를 이용한 충돌 체크 해 보았는가 구현 해 보았다고 답했는데, 그 후속 질문으로써 계층구조를 어떻게 구현했는지에 대해 물어봤다. 계층구조까지는 구현해 보지 않았다고 답하였다. 후속 질문의 경우 안해봤다는 답변보다 해보지는 않았으나 Octree 자료구조를 예시로 들면서 구현 계획을 말했으면 좋았을 것이다.</description>
+    </item>
+    
+  </channel>
+</rss>
