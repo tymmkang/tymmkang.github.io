@@ -6,10 +6,21 @@
     <description>Recent content in C&#43;&#43; on tymmkang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>kor</language>
-    <lastBuildDate>Tue, 21 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tymmkang.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>포트폴리오 계획</title>
+      <link>https://tymmkang.github.io/blog/post_2020_07_20_00_%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4_%EA%B3%84%ED%9A%8D/</link>
+      <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/blog/post_2020_07_20_00_%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4_%EA%B3%84%ED%9A%8D/</guid>
+      <description>취업 준비가 길어질 것을 대비 해야 할 것 같다. 취업 준비 기간동안 개발할 포트폴리오 계획을 포스팅한다.
+근황 여러번 면접을 보고 떨어져보면서 기초가 부족하다는 생각이 자주 들었다. 그러한 점을 보완하기위한 학습을 병행하고 있으며, GitHub리포지토리에 그런 학습을 기록해나가고 있다.
+하지만 학습에 치여 포트폴리오를 등한시 하면 문제가 될 수도 있다. 특히 이러한 취준 기간이 길어진다면 이미 떨어졌던 회사에 재지원 할 수도 있다. 그런 상황에서 면접관이 재지원자라는 것을 인지하고, 이전 지원과 비교해 보았을 때 변화가 보이지 않는다면 면접때 안좋은 인상을 주게 될 것이다.</description>
+    </item>
     
     <item>
       <title>윈도우 C&#43;&#43; 문자열 인코딩</title>

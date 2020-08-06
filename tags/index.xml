@@ -6,10 +6,19 @@
     <description>Recent content in Tags on tymmkang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>kor</language>
-    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tymmkang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://tymmkang.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>게임회사</title>
@@ -26,15 +35,6 @@
       <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tymmkang.github.io/tags/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;</title>
-      <link>https://tymmkang.github.io/tags/c&#43;&#43;/</link>
-      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tymmkang.github.io/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
