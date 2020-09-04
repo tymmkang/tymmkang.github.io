@@ -2,67 +2,39 @@
 <html lang="kor">
   <head>
   <meta charset="utf-8">
-<title>tymmkang&#39;s blog</title>
+<title>게임회사 기술 면접 복기 02 - tymmkang&#39;s blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.74.2" /><meta itemprop="name" content="tymmkang&#39;s blog">
-<meta itemprop="description" content=""><meta property="og:title" content="tymmkang&#39;s blog" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://tymmkang.github.io/" />
-<meta property="og:updated_time" content="2020-09-04T00:00:00+00:00" />
+<meta name="generator" content="Hugo 0.74.2" /><meta itemprop="name" content="게임회사 기술 면접 복기 02">
+<meta itemprop="description" content="모바일 클라이언트 개발">
+<meta itemprop="datePublished" content="2020-09-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="42">
+
+
+
+<meta itemprop="keywords" content="게임회사,기술면접," /><meta property="og:title" content="게임회사 기술 면접 복기 02" />
+<meta property="og:description" content="모바일 클라이언트 개발" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tymmkang.github.io/blog/post_2020_09_04_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0-02/" />
+<meta property="article:published_time" content="2020-09-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-04T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="tymmkang&#39;s blog"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="게임회사 기술 면접 복기 02"/>
+<meta name="twitter:description" content="모바일 클라이언트 개발"/>
 <link rel="stylesheet" href="/css/bundle.min.ecc32bdf83670f946cc87f86fb6463e3b4ead0039b2c673d9a8be008867f064a.css" integrity="sha256-7MMr34NnD5RsyH&#43;G&#43;2Rj47Tq0AObLGc9movgCIZ/Bko="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
     
 
-  <div id="theme-message" style="background-color:#3c3b3b;color:#f4f4f4;margin:auto auto;padding:.25em 2em;width:75%;">
-    <p style="text-align:center;">This message, related to the development of the theme, only displays on the
-      <code>localhost</code> homepage to notify you of any important theme changes.</p>
-      <hr>
-      <h5 style="color:#f4f4f4;text-align:center;"><i class="fas fa-exclamation-triangle"></i>Version 2.0.0 - July 20, 2020<i class="fas fa-exclamation-triangle"></i></h5>
-    <p>Below are the following changes that <em>could</em> be breaking changes for your site. For more details on any change, please refer to <a href="https://github.com/pacollins/hugo-future-imperfect-slim/pull/154">PR #154</a>.</p>
-<p>The major breaking change is:</p>
-<ol>
-<li>Users that have front matter that utilize <code>images</code> (backwards compatibility for <code>featured</code> and associated parameters still remains) <em>will</em> need to adjust from <code>[images]=&quot;SRC&quot;</code> to the new format.</li>
-</ol>
-<pre><code>[[images]]
-    src = &quot;&quot; // Link to image
-    alt = &quot;&quot; // Alt text for image
-    stretch = // Optional: See screenshots for referenced values and outcomes
-</code></pre><p>If you utilize any of the following, there <em>might</em> be a breaking:</p>
-<ol>
-<li>User custom templates <em>may</em> require adjustment.</li>
-<li>User custom i18n languages, or custom templates referencing i18n translations <em>may</em> require adjustment.</li>
-<li>User custom template for comments <em>will</em> require adjustment <em>if</em> it uses the theme&rsquo;s CSS and/or JS.</li>
-<li>User custom CSS <em>may</em> need to adjust due to a variety of class name changes and specificity changes.</li>
-</ol>
-<p>While I realize this is inconvenient, I hope that it is worth it to you in the long run. Thanks for using the theme, and feel free to submit issues as needed.</p>
-
-    <div style="text-align:center;">
-      <button onclick="removeBox()" class="button" style="color:#f4f4f4;margin-bottom:1em;">Close Notification Until Next Update</button>
-    </div>
-    <script>
-      if (window.location.href.indexOf('localhost:') < 1 || window.localStorage.getItem('HFIS-version') == '2.0.0') {
-        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
-      }
-      function removeBox() {
-        window.localStorage.setItem('HFIS-version', '2.0.0');
-        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
-      }
-    </script>
-  </div>
 <header id="site-header">
   <nav id="site-nav">
     <h1 class="nav-title">
       <a href="/" class="nav">
         
-          tymmkang's blog
+          Blog
         
       </a>
     </h1>
@@ -163,10 +135,8 @@
 
       <main id="site-main">
         
-  
-  
-    <article class="post">
-  <header>
+  <article class="post">
+    <header>
   <div class="title">
     
       <h2><a href="/blog/post_2020_09_04_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0-02/">게임회사 기술 면접 복기 02</a></h2>
@@ -182,15 +152,68 @@
   </div>
 </header>
 
-  <div class="content">
+    <div id="socnet-share">
+      
+
+
+
+
+  
     
-    
-    <p>지원한 회사는 자사 IP를 이용하여 신규 모바일 게임을 개발하는 회사이다. 면접은 2대 1 면접이었으며, 
+    <a href="//twitter.com/share?text=%ea%b2%8c%ec%9e%84%ed%9a%8c%ec%82%ac%20%ea%b8%b0%ec%88%a0%20%eb%a9%b4%ec%a0%91%20%eb%b3%b5%ea%b8%b0%2002&amp;url=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_09_04_00_%25EB%25A9%25B4%25EC%25A0%2591%25EB%25B3%25B5%25EA%25B8%25B0-02%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_09_04_00_%25EB%25A9%25B4%25EC%25A0%2591%25EB%25B3%25B5%25EA%25B8%25B0-02%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_09_04_00_%25EB%25A9%25B4%25EC%25A0%2591%25EB%25B3%25B5%25EA%25B8%25B0-02%2f&amp;title=%ea%b2%8c%ec%9e%84%ed%9a%8c%ec%82%ac%20%ea%b8%b0%ec%88%a0%20%eb%a9%b4%ec%a0%91%20%eb%b3%b5%ea%b8%b0%2002" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_09_04_00_%25EB%25A9%25B4%25EC%25A0%2591%25EB%25B3%25B5%25EA%25B8%25B0-02%2f&amp;title=%ea%b2%8c%ec%9e%84%ed%9a%8c%ec%82%ac%20%ea%b8%b0%ec%88%a0%20%eb%a9%b4%ec%a0%91%20%eb%b3%b5%ea%b8%b0%2002" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_09_04_00_%25EB%25A9%25B4%25EC%25A0%2591%25EB%25B3%25B5%25EA%25B8%25B0-02%2f&amp;description=%ea%b2%8c%ec%9e%84%ed%9a%8c%ec%82%ac%20%ea%b8%b0%ec%88%a0%20%eb%a9%b4%ec%a0%91%20%eb%b3%b5%ea%b8%b0%2002" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2ftymmkang.github.io%2fblog%2fpost_2020_09_04_00_%25EB%25A9%25B4%25EC%25A0%2591%25EB%25B3%25B5%25EA%25B8%25B0-02%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <p>지원한 회사는 자사 IP를 이용하여 신규 모바일 게임을 개발하는 회사이다. 면접은 2대 1 면접이었으며, 
 수도권 코로나-19로 인해 화상으로 진행되었다.</p>
-  </div>
-  <footer>
-    <a href="/blog/post_2020_09_04_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0-02/" class="button big">Read More</a>
-    <div class="stats">
+<p><strong>최근 진행한 면접으로, 아직 결과를 모른다. 합불 여부가 결정되면 포스팅하겠다.</strong></p>
+<h2 id="대답하지-못한-내용">대답하지 못한 내용</h2>
+<p>&hellip;</p>
+<h2 id="치명적-실수">치명적 실수</h2>
+<p>&hellip;</p>
+<h2 id="긍정적-반응">긍정적 반응</h2>
+<p>&hellip;</p>
+<h2 id="미적지근한-반응">미적지근한 반응</h2>
+<p>&hellip;</p>
+
+    </div>
+    <footer>
+      <div class="stats">
   <ul class="categories">
     
       
@@ -213,115 +236,41 @@
   </ul>
 </div>
 
-  </footer>
-</article>
-
+    </footer>
+  </article>
   
-    <article class="post">
-  <header>
-  <div class="title">
     
-      <h2><a href="/blog/post_2020_07_20_00_%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4_%EA%B3%84%ED%9A%8D/">포트폴리오 계획</a></h2>
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
     
     
-      <p>게임 클라이언트 개발 직군 중점</p>
     
-  </div>
-  <div class="meta">
-    <time datetime="2020-08-06 00:00:00 &#43;0000 UTC">2020-08-06</time>
-    
-    <p>2-Minute Read</p>
-  </div>
-</header>
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tymmkang" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
 
-  <div class="content">
-    
-    
-    <p>취업 준비가 길어질 것을 대비 해야 할 것 같다. 취업 준비 기간동안 개발할 포트폴리오 계획을 포스팅한다.</p>
-  </div>
-  <footer>
-    <a href="/blog/post_2020_07_20_00_%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4_%EA%B3%84%ED%9A%8D/" class="button big">Read More</a>
-    <div class="stats">
-  <ul class="categories">
-    
-      
-        
-          <li><a class="article-terms-link" href="/categories/study/">study</a></li>
-        
-      
-    
-  </ul>
-  <ul class="tags">
-    
-      
-        
-          <li><a class="article-terms-link" href="/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
-        
-      
-    
-  </ul>
-</div>
 
-  </footer>
-</article>
 
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/post_2020_07_28_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0-01/">게임회사 기술 면접 복기 01</a></h2>
-    
-    
-      <p>클라이언트 기술 개발 직군</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-07-28 00:00:00 &#43;0000 UTC">2020-07-28</time>
-    
-    <p>4-Minute Read</p>
-  </div>
-</header>
-
-  <div class="content">
-    
-    
-    <p>지원한 회사는 도트 스타일의 2D 벨트스크롤 액션 RPG 게임을 서비스하고 있다.
-면접은 6대 1 면접이었다. 단 한명은 질문은 안하고 랩탑으로 타이핑만 계속 했던것으로 보아 서기에 가까웠다.</p>
-  </div>
-  <footer>
-    <a href="/blog/post_2020_07_28_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0-01/" class="button big">Read More</a>
-    <div class="stats">
-  <ul class="categories">
-    
-      
-        
-          <li><a class="article-terms-link" href="/categories/study/">study</a></li>
-        
-      
-    
-  </ul>
-  <ul class="tags">
-    
-      
-        
-          <li><a class="article-terms-link" href="/tags/%ea%b2%8c%ec%9e%84%ed%9a%8c%ec%82%ac/">게임회사</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%ea%b8%b0%ec%88%a0%eb%a9%b4%ec%a0%91/">기술면접</a></li>
-        
-      
-    
-  </ul>
-</div>
-
-  </footer>
-</article>
 
   
   <div class="pagination">
     
     
-      <a href="/page/2/" class="button right"><span>Next</span></a>
+      <a href="/blog/post_2020_07_20_00_%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4_%EA%B3%84%ED%9A%8D/" class="button right"><span>포트폴리오 계획</span></a>
     
   </div>
 
