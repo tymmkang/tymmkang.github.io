@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tymmkang&#39;s blog</title>
+    <link>https://tymmkang.github.io/</link>
+    <description>Recent content on tymmkang&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>kor</language>
+    <lastBuildDate>Fri, 04 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tymmkang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>게임회사 기술 면접 복기 02</title>
+      <link>https://tymmkang.github.io/blog/post_2020_09_04_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0-02/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/blog/post_2020_09_04_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0-02/</guid>
+      <description>지원한 회사는 자사 IP를 이용하여 신규 모바일 게임을 개발하는 회사이다. 면접은 2대 1 면접이었으며, 수도권 코로나-19로 인해 화상으로 진행되었다.
+최근 진행한 면접으로, 아직 결과를 모른다. 합불 여부가 결정되면 포스팅하겠다.
+대답하지 못한 내용 &amp;hellip;
+치명적 실수 &amp;hellip;
+긍정적 반응 &amp;hellip;
+미적지근한 반응 &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>포트폴리오 계획</title>
+      <link>https://tymmkang.github.io/blog/post_2020_07_20_00_%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4_%EA%B3%84%ED%9A%8D/</link>
+      <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/blog/post_2020_07_20_00_%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4_%EA%B3%84%ED%9A%8D/</guid>
+      <description>취업 준비가 길어질 것을 대비 해야 할 것 같다. 취업 준비 기간동안 개발할 포트폴리오 계획을 포스팅한다.
+근황 여러번 면접을 보고 떨어져보면서 기초가 부족하다는 생각이 자주 들었다. 그러한 점을 보완하기위한 학습을 병행하고 있으며, GitHub리포지토리에 그런 학습을 기록해나가고 있다.
+하지만 학습에 치여 포트폴리오를 등한시 하면 문제가 될 수도 있다. 특히 이러한 취준 기간이 길어진다면 이미 떨어졌던 회사에 재지원 할 수도 있다. 그런 상황에서 면접관이 재지원자라는 것을 인지하고, 이전 지원과 비교해 보았을 때 변화가 보이지 않는다면 면접때 안좋은 인상을 주게 될 것이다.</description>
+    </item>
+    
+    <item>
+      <title>게임회사 기술 면접 복기 01</title>
+      <link>https://tymmkang.github.io/blog/post_2020_07_28_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0-01/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/blog/post_2020_07_28_00_%EB%A9%B4%EC%A0%91%EB%B3%B5%EA%B8%B0-01/</guid>
+      <description>지원한 회사는 도트 스타일의 2D 벨트스크롤 액션 RPG 게임을 서비스하고 있다. 면접은 6대 1 면접이었다. 단 한명은 질문은 안하고 랩탑으로 타이핑만 계속 했던것으로 보아 서기에 가까웠다.
+대답하지 못한 내용 1. AABB, OBB를 이용한 충돌 체크 해 보았는가 구현 해 보았다고 답했는데, 그 후속 질문으로써 계층구조를 어떻게 구현했는지에 대해 물어봤다. 계층구조까지는 구현해 보지 않았다고 답하였다. 후속 질문의 경우 안해봤다는 답변보다 해보지는 않았으나 Octree 자료구조를 예시로 들면서 구현 계획을 말했으면 좋았을 것이다.</description>
+    </item>
+    
+    <item>
+      <title>윈도우 C&#43;&#43; 문자열 인코딩</title>
+      <link>https://tymmkang.github.io/blog/post_2020_07_21_00_%EC%9C%88%EB%8F%84%EC%9A%B0_c&#43;&#43;_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9D%B8%EC%BD%94%EB%94%A9/</link>
+      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/blog/post_2020_07_21_00_%EC%9C%88%EB%8F%84%EC%9A%B0_c&#43;&#43;_%EB%AC%B8%EC%9E%90%EC%97%B4_%EC%9D%B8%EC%BD%94%EB%94%A9/</guid>
+      <description>C++ 문자열 인코딩 며칠 전 C++에서 HTTPS 리퀘스트를 송신해야 했었다.
+본인은 MSVC 멀티바이트 환경에서 구현했기 때문에. 필요했던 함수는 Multibyte, UTF-8 간 변환과, UTF-8 문자열을 URL 포맷에 맞도록 인코딩해주는 함수였다.
+ MB2U8 (Multibyte -&amp;gt; UTF-8) U82MB (UTF-8 -&amp;gt; Multibyte) EncodeForURL (UTF-8 -&amp;gt; URL format)  구현한 함수 중 MB2U8과, U82MB 함수에서 첫 번째 파라미터로 전달된 std::string은 사실상 바이트 버퍼로 취급된다. 즉 std::string이라고 내부 버퍼에 1byte로 표현되는 문자들만 있는 것이 아니다. 이렇게 구현한 이유는 표준입출력을 통해 바로 콘솔에 출력하고 싶어서이다.</description>
+    </item>
+    
+    <item>
+      <title>테스트 포스팅</title>
+      <link>https://tymmkang.github.io/blog/post_2020_07_20_00_test/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/blog/post_2020_07_20_00_test/</guid>
+      <description>테스트 포스팅 테스트 용도의 포스팅입니다.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://tymmkang.github.io/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/about/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Hugo makes use of a variety of open source projects including:
+ https://github.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://tymmkang.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tymmkang.github.io/contact/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
